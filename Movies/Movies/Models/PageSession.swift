@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct PageSession {
+    
+    var currentPage = 0
+    var totalPage = 0
+    var totalResults = 0
+    
+    mutating func resetPage() {
+        self.currentPage = 0
+        self.totalPage = 1
+    }
+    
+    func hasNextPage() -> Bool {
+        return self.currentPage < self.totalPage
+    }
+    
+}
