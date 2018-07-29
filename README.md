@@ -7,7 +7,7 @@ Sample iOS Application using Movies DB API (https://www.themoviedb.org/documenta
 
 ### Installation:
 1. Git Clone
-2. Go to Movies Folter containing cartfile
+2. Go to Movies Folder containing cartfile
 3. carthage bootstrap --platform ios
 
 ### How to use
