@@ -33,6 +33,12 @@
 		2946C209210DA0D1003E0266 /* RecentSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2946C205210DA0D1003E0266 /* RecentSearchCell.xib */; };
 		2946C20B210DA143003E0266 /* URL+PosterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946C20A210DA143003E0266 /* URL+PosterImage.swift */; };
 		2946C20D210DA26B003E0266 /* UIViewControllers+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946C20C210DA26B003E0266 /* UIViewControllers+Helpers.swift */; };
+		2946C211210DA988003E0266 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2946C20F210DA988003E0266 /* movie.json */; };
+		2946C212210DA988003E0266 /* moviedata.json in Resources */ = {isa = PBXBuildFile; fileRef = 2946C210210DA988003E0266 /* moviedata.json */; };
+		2946C213210DA9C7003E0266 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946C1F1210DA02B003E0266 /* Movie.swift */; };
+		2946C214210DA9FB003E0266 /* PageSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946C1F3210DA035003E0266 /* PageSession.swift */; };
+		2946C216210DAA6B003E0266 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2946C1E2210D9D62003E0266 /* SVProgressHUD.framework */; };
+		2946C217210DAA74003E0266 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2946C1E3210D9D62003E0266 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,8 @@
 		2946C205210DA0D1003E0266 /* RecentSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentSearchCell.xib; sourceTree = "<group>"; };
 		2946C20A210DA143003E0266 /* URL+PosterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+PosterImage.swift"; sourceTree = "<group>"; };
 		2946C20C210DA26B003E0266 /* UIViewControllers+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Helpers.swift"; sourceTree = "<group>"; };
+		2946C20F210DA988003E0266 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		2946C210210DA988003E0266 /* moviedata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moviedata.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2946C217210DAA74003E0266 /* Kingfisher.framework in Frameworks */,
+				2946C216210DAA6B003E0266 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +158,7 @@
 		2943E95A210D96C1002423F7 /* MoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				2946C20E210DA988003E0266 /* Resources */,
 				2943E95B210D96C1002423F7 /* MoviesTests.swift */,
 				2943E95D210D96C1002423F7 /* Info.plist */,
 			);
@@ -209,6 +220,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		2946C20E210DA988003E0266 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2946C20F210DA988003E0266 /* movie.json */,
+				2946C210210DA988003E0266 /* moviedata.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,6 +258,7 @@
 				2943E953210D96C1002423F7 /* Sources */,
 				2943E954210D96C1002423F7 /* Frameworks */,
 				2943E955210D96C1002423F7 /* Resources */,
+				2946C215210DAA12003E0266 /* Run Carthage */,
 			);
 			buildRules = (
 			);
@@ -304,6 +325,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2946C212210DA988003E0266 /* moviedata.json in Resources */,
+				2946C211210DA988003E0266 /* movie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +349,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		2946C215210DAA12003E0266 /* Run Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			name = "Run Carthage";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -355,7 +396,9 @@
 			files = (
 				2946C1FB210DA062003E0266 /* NetworkManager.swift in Sources */,
 				2943E95C210D96C1002423F7 /* MoviesTests.swift in Sources */,
+				2946C213210DA9C7003E0266 /* Movie.swift in Sources */,
 				2946C201210DA09C003E0266 /* DateFormatter+MovieDate.swift in Sources */,
+				2946C214210DA9FB003E0266 /* PageSession.swift in Sources */,
 				2946C1F7210DA044003E0266 /* MovieViewModel.swift in Sources */,
 				2946C1FE210DA06F003E0266 /* SearchManager.swift in Sources */,
 			);
@@ -559,6 +602,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MoviesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +626,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MoviesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
