@@ -135,6 +135,7 @@ extension SearchMoviesViewController : UITableViewDelegate {
     
 }
 
+//#MARK: SearchBar Delegate
 extension SearchMoviesViewController:UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

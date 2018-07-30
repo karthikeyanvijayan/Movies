@@ -12,7 +12,7 @@ class SearchManager {
     
     let userDefaultsKey = "RecentSearch"
     
-    private let recentSearchLimit = 10
+    let recentSearchLimit = 10
     
     // save the search query - we using userdefaults for persistence
     func saveSearch(text:String) {

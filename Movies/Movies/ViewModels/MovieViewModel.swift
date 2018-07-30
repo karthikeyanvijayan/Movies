@@ -89,12 +89,6 @@ class MovieViewModel {
                 }
             }
             
-            
-            
-            print("Current Page : \(self.page.currentPage) / Total : \(self.page.totalPage)")
-            print("Total Movies : \(self.movies.count) && Total Results: \(self.page.totalResults)")
-            
-            
             fetchStatus = (self.movies.isEmpty) ? MovieFetchState.Empty :  MovieFetchState.Completed
             self.movieRefreshDelegate?.reloadMovieList(fetchStatus)
         }
@@ -122,7 +116,6 @@ class MovieViewModel {
     
     func loadMorePage() {
         if !self.isFetching {
-            print("Load More")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.performSearch(self.selectedQueryText, isLoadMore: true)
             }
